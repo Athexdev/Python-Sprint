@@ -68,3 +68,58 @@ print(count)
     
 except Exception:
     print("kindly check your program and try again !!")
+
+
+students = [
+    {"name": "Devesh", "scores": [85, 90, 88]},
+    {"name": "Rahul", "scores": [70, 75, 72]},
+    {"name": "Amit", "scores": [95, 98, 92]}
+]
+
+**student database topper and average logic**
+
+for d in students:
+    average=sum(d["scores"])/len(d["scores"])
+    average=round(average,2)
+    print(f"{d["name"]}'s average is {average}")
+    
+topper=[]
+for d in students:
+    if sum(d["scores"])/len(d["scores"]) >90:
+        topper.append(d["name"])
+        
+print(f"{topper} is the topper of the class ")
+
+**the sales database problem to find the high valkue items **
+
+sales = [("Laptop", 50000), ("Mouse", 500), ("Laptop", 52000), ("Keyboard", 1500), ("Mouse", 450)]
+
+
+
+
+
+inventory_value= {}
+
+for itemname,price in sales:
+
+    if itemname in inventory_value:
+
+        inventory_value[itemname]=inventory_value[itemname]+price
+
+    else:
+
+        inventory_value[itemname]=price
+
+
+
+        
+
+high_value_items=[itemname for itemname,price in inventory_value.items() if price>1000]
+
+        
+
+        
+
+print("the high value items are:",high_value_items)    
+
+
